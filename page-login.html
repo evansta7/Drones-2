@@ -44,15 +44,18 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form id= "loginForm"  action="#">
                         <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Email" id="loginEmail">
+                            <label>Username</label>
+                            <input type="text" class="form-control" placeholder="Username" id="loginUsername">
                         </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Password" name="loginPassword">
+                                <input type="password" class="form-control" placeholder="Password" id="loginPassword">
                         </div>
+                        <div class="form-group">
+                            <output id="ErrorMessage" ></output>
+                    </div>
                                 <div class="checkbox">
                                     <label>
                                 <input type="checkbox"> Remember Me
@@ -62,7 +65,7 @@
                             </label>
 
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onclick="receiveName()">Sign in</button>
+                                <input type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onclick="loginData()">Sign in</input>
                                 <div class="register-link m-t-15 text-center">
                                     <p>Don't have account ? <a href="page-register.html"> Sign Up Here</a></p>
                                 </div>
