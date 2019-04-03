@@ -1,5 +1,3 @@
-
-
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -14,8 +12,7 @@ var connection = mysql.createConnection({
 //The Columns format should be as follow: Column1, Column2 etc
 //The tableName is the nme of the table you are quering
 //The
-function readData(columns,tableName , condition = ""){
-  var dataReceived = [];
+module.exports.data = function readData(columns,tableName , condition = "", callback){
   if (condition != "") {
    var query = 'SELECT ' + columns + 'FROM ' + tableName + ' WHERE ' + condition;
   }else
@@ -24,11 +21,11 @@ function readData(columns,tableName , condition = ""){
   }
   connection.connect(function(err) {
     connection.query(query, function (err, result, fields) {
-      dataReceived = result;
+     return callback(result);
     });
   });
-  console.log(dataReceived);
-
-  return dataReceived;
+  
 }
-var result = readData('*','Users', 'Username =\'liz\'');
+
+
+
