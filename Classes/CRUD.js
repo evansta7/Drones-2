@@ -3,11 +3,12 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
-  database : 'dronefarming'
+  database : 'Drones'
 });
 
 connection.connect(function(err) {
-  connection.query('SELECT * FROM dronefarming.users', function (err, result, fields) {
+  connection.query('SELECT * FROM Drones.Users', function (err, result, fields) {
     console.log(result);
   });
+  
 });
