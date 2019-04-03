@@ -48,7 +48,38 @@ function insertData(columns,values, tablename){
     connection.query(query);
   })
 }
-insertData("`Username`, `Password`, `Email`, `CellphoneNumber`, `Name`, `Surname`",'\'liz\',\'123\',\'asd@com\',\'065455\',\'ELizabeth\', \'van Staden\'', 'users');
+//insertData("`Username`, `Password`, `Email`, `CellphoneNumber`, `Name`, `Surname`",'\'liz\',\'123\',\'asd@com\',\'065455\',\'ELizabeth\', \'van Staden\'', 'users');
 
+/* This function updates any rows which meets the specified condition
+   valuesWithColumns is the columns you want to update
+    - syntax: Column='Value',Column2='Value2 etc
+   The query must have a condition
+    - syntax: UserID = 1
+*/
 
+function updateData(valuesWithColumns, tablename, condition){
+  var query = 'UPDATE ' + tablename + ' SET ' + valuesWithColumns +  ' WHERE ' + condition;
+  var data = [false, 1];
+  connection.query(query, data, (error, results, fields) => {
+    if (error){
+      return console.error(error.message);
+    }
+    console.log('Rows affected:', results.affectedRows);
+  });
+   
+}
+//updateData('Username=\'Lizzy\'','users','UserID=1');
 
+/* This function deletes one row of data if the condition is satisfied
+    Needs to have a condition, otherwise the whole table is deleted
+*/
+function deleteData(tablename, condition){
+  var query = 'DELETE FROM ' + tablename + ' WHERE ' + condition;
+  connection.query(query, 1, (error, results, fields) => {
+    if (error)
+      return console.error(error.message);
+    console.log('Deleted Row(s):', results.affectedRows);
+  });
+}
+
+//deleteData('users', 'UserID=4');
