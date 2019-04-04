@@ -39,12 +39,10 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.html">
                         <img class="align-content" src="images/logo.png" alt="" height="220" width="220">
-                    </a>
                 </div>
                 <div class="login-form">
-                    <form id= "loginForm"  action="#">
+                    <form>
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" class="form-control" placeholder="Username" id="loginUsername">
@@ -54,7 +52,7 @@
                                 <input type="password" class="form-control" placeholder="Password" id="loginPassword">
                         </div>
                         <div class="form-group">
-                            <output id="ErrorMessage" ></output>
+                            <output id="ErrorMessage" hidden ></output>
                     </div>
                                 <div class="checkbox">
                                     <label>
@@ -65,7 +63,7 @@
                             </label>
 
                                 </div>
-                                <input type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onclick="loginData()">Sign in</input>
+                                <input type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onclick="return loginData()">Sign in</input>
                                 <div class="register-link m-t-15 text-center">
                                     <p>Don't have account ? <a href="page-register.html"> Sign Up Here</a></p>
                                 </div>
