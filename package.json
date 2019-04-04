@@ -27,8 +27,13 @@
   },
   "dependencies": {
     "async": "^2.6.2",
+    "dom-event-listener": "^1.0.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "memento-mysql": "^1.0.2",
     "mongodb": "^3.2.2",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "ramda": "^0.26.1",
+    "uniq": "^1.0.1"
   }
 }

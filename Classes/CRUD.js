@@ -3,7 +3,7 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
-  database : 'Drones'
+  database : 'dronefarming'
 });
 
 
@@ -19,18 +19,18 @@ dbData.data('*','Users', 'Username =\'liz\'', function(result){
 }); */
 module.exports.data = function readData(columns,tableName , condition = "", callback){
   if (condition != "") {
-   var query = 'SELECT ' + columns + 'FROM ' + tableName + ' WHERE ' + condition;
+   var query = 'SELECT ' + columns + ' FROM ' + tableName + ' WHERE ' + condition;
   }else
   {
    var query = 'SELECT ' + columns + 'FROM ' + tableName;
   }
   connection.connect(function(err) {
     connection.query(query, function (err, result, fields) {
+      console.log(result)
      return callback(result);
     });
   });
 }
-
 
 //This functions inserts data into the database
 //The SQL does not hava a condition
